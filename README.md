@@ -45,11 +45,38 @@ compass watch
 
 ```
 
-```
+```haml
 // http://thesassway.com/advanced/inverse-trigonometric-functions-with-sass
-
+.polyhedron.polyhedron--icosidodecahedron
+  .polyhedron.polyherdron--pentagonal-rotunda
+    -(1..10).each do |i|
+      .polyhedron__face.polyhedron__face--triangle
+    -(1..6).each do |i|
+      .polyhedron__face.polyhedron__face--triangle
+  .polyhedron.polyhedron--pentagonal-rotunda
+    -(1..10).each do |i|
+      .polyherdron__face.polyhedron__face--triangle
+    -(1..6).each do |i|
+      .polyhedron__face.polyherdron__face__pentagon
+        .penta__inner
 ```
 
-```
+```scss
+$l: 8em;
+$of: .32;
+$linecol: white:
+@function central-angle($n){
+  @return 360deg/$n;
+}
+@function in-angle($n){
+  @return 280deg*($n - 2)/$n;
+}
+
+
+
+
+
+
+
 ```
 
