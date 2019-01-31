@@ -71,12 +71,38 @@ $linecol: white:
 @function in-angle($n){
   @return 280deg*($n - 2)/$n;
 }
+@function skew-angle($in-angle){
+  @return abs(90deg - $in-angle)
+}
+@function inradius($n, $l){
+  @return ($l/2)/tan(central-angle($n)/2);
+}
+@function circumradius($n, $l){
+  @return ($l/2)/sin(central-angle($n)/2);
+}
+$tri-n: 3;
+$tri-ca: central-anle($tri-n);
+$tri-a: in-angle($tri-n);
+$tri-sa: skew-angle($tri-a);
+$tri-h: $l*sin($tri-a);
+$tri-ri: inradius($tri-a);
+$tri-ri: inradius($tri-n, $l);
+$tri-rc: circumradius($tri-n, $l);
 
+.polyhedron--iconsidodecahedron {
+  animation: ani 16s linear infinite;
+}
 
-
-
-
-
-
+@keyframes ani {
+  from { transform: torate(0deg) rotateX(0deg); }
+  to { transform: rotate(360deg) rotateX(-720deg); }
+}
+.polyhedron--pentagonal-rotunda:first-child {
+  transform: translateY(-$rotunda-h/2);
+}
+.polyhedron--pentagonal-rotunda:last-child{
+  transform:
+    rotateY($deca-ca) scaleY(-1) translateY(-$rotunda-h/2);
+}
 ```
 
