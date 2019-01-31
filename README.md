@@ -2,6 +2,25 @@
 ---
 https://github.com/sapo/Ink
 
+```js
+Ink.requireModules(
+  ['Ink.Dom.Css_1'],
+  function(Css){
+    var elm = Ink.s('.ink');
+    Css.addClassName(elm, 'hot');
+  }
+);
+
+```
+
+```scss
+$ink-class-prefix: my-;
+$navigation-class-name: #{$ink-class-prefix}nav
+
+.my-nav {
+}
+```
+
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install node
